@@ -7,7 +7,7 @@ from transformers import pipeline, set_seed
 
 @st.cache_resource
 def load_generator():
-    return pipeline("text-generation", model="gpt2")
+    return pipeline("text-generation", model="gpt2-large")
 
 generator = load_generator()
 
