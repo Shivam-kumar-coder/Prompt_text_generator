@@ -12,15 +12,17 @@ def load_generator():
 generator = load_generator()
 
 
-st.title("Text Generator")
+st.title(" Prompt ToText Generator")
 topic = st.chat_input("Enter a topic to generate text:")
 
 max_len = st.slider("Max length", 50, 300, 100, step=10)
 
-if st.button("Generate"):
+if topic:
     with st.spinner("Generating text..."):
-        set_seed(42)
-        result = generator(topic, max_length=max_len, num_return_sequences=1)
-        st.success("Done!")
-        st.write("### Generated Text:")
-        st.write(result[0]["generated_text"])
+    set_seed(42)
+    result = generator(topic, max_length=max_len, num_return_sequences=1)
+    st.success("Done!")
+    st.write("### Generated Text:")
+    st.write(result[0]["generated_text"])
+else:
+    st.info("PLease enter Prompt Text")
