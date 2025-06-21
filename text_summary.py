@@ -13,7 +13,7 @@ generator = load_generator()
 
 
 st.title("Text Generator")
-topic = st.text_input("Enter a topic to generate text:")
+topic = st.chat_input("Enter a topic to generate text:")
 
 max_len = st.slider("Max length", 50, 300, 100, step=10)
 
