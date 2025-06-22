@@ -23,6 +23,6 @@ if topic:
         result = generator(topic, max_length=max_len, num_return_sequences=1)
         st.success("Done!")
         st.write("### Generated Text:")
-        st.write(result[0][generated_text'])
+        st.write(result[0]['generated_text'])
 else:
     st.info("PLease enter Prompt Text")
